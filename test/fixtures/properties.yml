@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  address: MyString
+  net_size: 1
+  rent: 1
+  property_type: MyString
+  country: MyString
+  area: MyString
+  number_of_living_rooms: 1
+  number_of_bathrooms: 1
+
+two:
+  title: MyString
+  address: MyString
+  net_size: 1
+  rent: 1
+  property_type: MyString
+  country: MyString
+  area: MyString
+  number_of_living_rooms: 1
+  number_of_bathrooms: 1
