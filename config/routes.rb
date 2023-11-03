@@ -4,8 +4,11 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
     }
     get '/properties/search', to: 'properties#search_property', as: 'search_property'
-    resources :properties, only: [:create,:show]
-      
+    get '/favorites/add_favorite'
+
+    resources :properties
+    resources :favorite_properties, only: [:create]
+    resources :favorites, only: [:index]
 
 end
 
