@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
-    devise_for :users, controllers: {
-        sessions: 'users/sessions',
-        registrations: 'users/registrations'
-    }
+  get 'current_user/index'
+    devise_for :users, path: '', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'signup'
+  },
+  controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
     get '/properties/search', to: 'properties#search_property', as: 'search_property'
-    get '/favorites/add_favorite'
+    post '/favorites/add_favorite', to: 'favorites#add_favorite', as: 'add_favorite'
 
     resources :properties
     resources :favorite_properties, only: [:create]
     resources :favorites, only: [:index]
+    get '/current_user', to: 'current_user#index'
+
 
 end
 

@@ -46,7 +46,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+   config.authentication_keys = [:email]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -282,6 +282,11 @@ Devise.setup do |config|
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
 
+  # config.warden do |manager|
+  #   manager.strategies.add(:jwt, Devise::Strategies::JWTAuthenticatable)
+  #   manager.default_strategies(scope: :user).unshift :jwt
+  # end
+
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
   # is mountable, there are some extra configurations to be taken into account.
@@ -304,6 +309,18 @@ Devise.setup do |config|
   # Note: These might become the new default in future versions of Devise.
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
+  config.jwt do |jwt|
+    jwt.secret = "807107988bbc3089167d81158a0bc828e2210dfd2f58e2868f5438725e24900f2e519623eb9240859e12ce0b995c2943f143aa482736815b5475b6f31679475b"
+    jwt.dispatch_requests = [
+      ['POST', %r{^/login$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 30.minutes.to_i
+  end
+
+  config.navigational_formats = []
 
   # ==> Configuration for :registerable
 

@@ -1,0 +1,5 @@
+min_rent: 30000
+max_rent: 100000
+min_net_size: 200
+max_net_size: 500
+max_bedrooms: 2
