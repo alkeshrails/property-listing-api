@@ -1,0 +1,18 @@
+current directory: /home/developer/Desktop/test_task/urhouse/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+/home/developer/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/developer/Desktop/test_task/urhouse/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231106-51361-jareac sitelibdir\=./.gem.20231106-51361-jareac clean
+
+current directory: /home/developer/Desktop/test_task/urhouse/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231106-51361-jareac sitelibdir\=./.gem.20231106-51361-jareac
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/developer/Desktop/test_task/urhouse/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231106-51361-jareac sitelibdir\=./.gem.20231106-51361-jareac install
+/usr/bin/install -m 0755 cparse.so ./.gem.20231106-51361-jareac/racc
+
+current directory: /home/developer/Desktop/test_task/urhouse/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231106-51361-jareac sitelibdir\=./.gem.20231106-51361-jareac clean

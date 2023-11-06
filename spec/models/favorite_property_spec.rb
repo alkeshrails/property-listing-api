@@ -7,7 +7,7 @@ RSpec.describe FavoriteProperty, type: :model do
   end
 
   it 'validates the presence of property_id' do
-    favorite_property = FavoriteProperty.new(user_id: 1)
+    favorite_property = FavoriteProperty.new(favorite_id: 1)
     expect(favorite_property).not_to be_valid
   end
 end

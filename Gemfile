@@ -7,7 +7,7 @@ ruby "3.2.2"
 gem "rails", "~> 7.0.8"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
 
 gem "pg", "~> 1.1"
 
@@ -23,6 +23,8 @@ gem "puma", "~> 5.0"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
+gem 'byebug'
+
 gem 'rack-cors'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -37,6 +39,9 @@ gem "devise"
 gem 'devise-jwt'
 gem 'pry'
 gem 'jsonapi-serializer'
+gem 'jwt'
+
+gem 'rails-controller-testing'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -47,6 +52,10 @@ gem 'jsonapi-serializer'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails', '~> 5.0'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+   gem 'rubocop-discourse', require: false
 end
 
 group :development do

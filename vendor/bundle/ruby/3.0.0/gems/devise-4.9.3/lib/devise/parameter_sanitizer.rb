@@ -37,7 +37,7 @@ module Devise
   class ParameterSanitizer
     DEFAULT_PERMITTED_ATTRIBUTES = {
       sign_in: [:password, :remember_me],
-      sign_up: [:password, :password_confirmation],
+      sign_up: [:password, :password_confirmation, :date_of_birth],
       account_update: [:password, :password_confirmation, :current_password]
     }
 

@@ -1,0 +1,18 @@
+current directory: /home/developer/Desktop/test_task/urhouse/path/ruby/3.2.0/gems/stringio-3.0.8/ext/stringio
+/home/developer/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/developer/Desktop/test_task/urhouse/path/ruby/3.2.0/gems/stringio-3.0.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20231106-57306-6z5k8a sitelibdir\=./.gem.20231106-57306-6z5k8a clean
+
+current directory: /home/developer/Desktop/test_task/urhouse/path/ruby/3.2.0/gems/stringio-3.0.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20231106-57306-6z5k8a sitelibdir\=./.gem.20231106-57306-6z5k8a
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/developer/Desktop/test_task/urhouse/path/ruby/3.2.0/gems/stringio-3.0.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20231106-57306-6z5k8a sitelibdir\=./.gem.20231106-57306-6z5k8a install
+/usr/bin/install -m 0755 stringio.so ./.gem.20231106-57306-6z5k8a
+
+current directory: /home/developer/Desktop/test_task/urhouse/path/ruby/3.2.0/gems/stringio-3.0.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20231106-57306-6z5k8a sitelibdir\=./.gem.20231106-57306-6z5k8a clean

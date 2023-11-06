@@ -1,5 +1,6 @@
-inherit_from: .rubocop_todo.yml
-# .rubocop.yml
+inherit_from:
+  - .rubocop_todo.yml
+  - .rubocop-rails.yml
 
 AllCops:
   TargetRubyVersion: 3.0
@@ -11,15 +12,21 @@ Style/Documentation:
 Lint/UnusedBlockArgument:
   Enabled: false
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
-  EnforcedStyle: always
-  SupportedStyles:
-    - always
-    - never
+require:
+  - rubocop-discourse
 
-Layout/IndentationWidth:
-  Width: 2
+
+# Set the preferred style guide
+inherit_from:
+  - .rubocop_todo.yml
+  # Add other inherited configuration files as needed
 
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
+
+# Syntax
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/SymbolArray:
+  EnforcedStyle: percent

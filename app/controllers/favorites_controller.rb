@@ -1,23 +1,40 @@
 class FavoritesController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
+
   def index
     @favorites = current_user.favorite&.favorite_properties
-
-    render json: @favorites, status: 200
+    render json: @favorites, status: :ok
   end
 
   def add_favorite
-    favorite = Favorite.find_or_create_by(user_id: current_user.id)
-    favorite_property = FavoriteProperty.new(favorite_id: favorite.id, property_id: params[:property_id])
+    favorite = find_or_create_favorite
+    favorite_property = build_favorite_property(favorite)
+
     if favorite_property.save
-      render json: "Faviorite added successfully"
+      render json: 'Favorite added successfully', status: :ok
     else
-      render json: "Faviorite Not able to be added."
+      render json: 'Failed to add to favorites', status: :unprocessable_entity
     end
   end
 
   def remove_favorite
-    current_user.favorite.favorite_properties.find_by(property_id: params[:property_id]).destroy
-    render json: "removed successfully"
+    favorite_property = current_user.favorite&.favorite_properties&.find_by(property_id: params[:property_id])
+
+    if favorite_property
+      favorite_property.destroy
+      render json: 'Removed successfully', status: :ok
+    else
+      render json: 'Favorite not found', status: :not_found
+    end
   end
+
+  private
+
+    def find_or_create_favorite
+      Favorite.find_or_create_by(user_id: current_user.id)
+    end
+
+    def build_favorite_property(favorite)
+      FavoriteProperty.new(favorite_id: favorite.id, property_id: params[:property_id])
+    end
 end

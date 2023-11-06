@@ -23,7 +23,7 @@ default: &default
   # host: database
   host: localhost
   pool: 5
-  username: postgres
+  username: pguser
   password: postgres
 
 
@@ -35,7 +35,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: manu_management
+  #username: ur_house
 
   # The password associated with the postgres role (username).
   #password:
@@ -88,12 +88,4 @@ test:
  
 production:
   <<: *default
-  adapter: postgresql
-  encoding: utf8
   url: <%= ENV['DATABASE_URL'] %>
-  database: ur_house_production
-  pool: 10
-  username: ur_house
-  password: <%= ENV['UR_HOUSE_DATABASE_PASSWORD'] %>
-  host: 18.142.128.26
-  port: 5432

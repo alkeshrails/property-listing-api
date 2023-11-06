@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_05_151153) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_06_174606) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "favorite_properties", force: :cascade do |t|
-    t.integer "favorite_id", null: false
-    t.integer "property_id", null: false
+    t.bigint "favorite_id", null: false
+    t.bigint "property_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["favorite_id"], name: "index_favorite_properties_on_favorite_id"
@@ -21,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_05_151153) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_favorites_on_user_id"
@@ -45,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_05_151153) do
     t.integer "number_of_bathrooms"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_favorite", default: false
   end
 
   create_table "users", force: :cascade do |t|
