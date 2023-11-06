@@ -1,0 +1,25 @@
+inherit_from: .rubocop_todo.yml
+# .rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 3.0
+  SuggestExtensions: false
+
+Style/Documentation:
+  Enabled: false
+
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  EnforcedStyle: always
+  SupportedStyles:
+    - always
+    - never
+
+Layout/IndentationWidth:
+  Width: 2
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods

@@ -27,13 +27,14 @@ class PropertiesController < ApplicationController
     end
 
     def update
+
       if current_user.user_type == 'admin'
         @property = Property.find(params[:id])
 
         if @property.update(property_params)
           render json: @property, status: 200
         else
-          render json: @property.errors, status: unprocessable_entity00
+          render json: @property.errors, status: :unprocessable_entity
         end
       else
         render json: "You are not authorized to update property"  
@@ -42,7 +43,6 @@ class PropertiesController < ApplicationController
 
     def search_property
       config_data = load_config.with_indifferent_access
-      binding.pry
       min_rent = params[:min_rent] || config_data['min_rent']
       max_rent = params[:max_rent] || config_data['max_rent']
       min_net_size = params[:min_net_size] || config_data['min_net_size']
@@ -56,10 +56,14 @@ class PropertiesController < ApplicationController
         .within_net_size_range(min_net_size, max_net_size)
         .in_cities(cities)
         .in_districts(districts)
-        .with_max_bedrooms(max_bedrooms)
-
+        .with_max_bedrooms(max_bedrooms.to_i)
+        properties = if @properties.any?
+          @properties 
+        else 
+          Property.all
+        end
   
-      render json: @properties
+      render json: properties
     end
 
     private
