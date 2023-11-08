@@ -45,6 +45,9 @@ Make sure you have the following software installed on your system:
 
     **Admin Credentials**
     email: `admin@gmail.com`
+    password: `admin@password`
+
+    email: `testadmin@gmail.com`
     password: `password@admin`
 
 4. Start the application:
