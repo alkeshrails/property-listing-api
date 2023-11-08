@@ -3,3 +3,12 @@ max_rent: 100000
 min_net_size: 200
 max_net_size: 500
 max_bedrooms: 2
+area: {
+    taipei_city: 'Taipei City',
+    new_taipei_city: 'New Taipei City'
+  }
+property_type: {
+    residential: 'residential',
+    office: 'office',
+    retail: 'retail'
+  }

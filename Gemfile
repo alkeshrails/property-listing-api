@@ -22,6 +22,15 @@ gem "puma", "~> 5.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
+gem 'kimurai'
+
+gem 'httparty'
+
+gem 'watir', '~> 6.19', '>= 6.19.1'
+gem 'webdrivers', '~> 4.6'
+
+gem 'nokogiri'
+gem 'open-uri-cached', require: 'open-uri'
 
 gem 'byebug'
 
