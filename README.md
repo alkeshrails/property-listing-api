@@ -67,3 +67,5 @@ Make sure you have the following software installed on your system:
 Planned improvements for the application:
 - Add the ability for admin users to upload property images.
 - Configure a Rake task for scraping properties from the UrHouse website.
+
+The app is deployed on Render and accessible on https://property-list-ojui.onrender.com
