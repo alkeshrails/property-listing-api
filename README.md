@@ -41,18 +41,20 @@ Make sure you have the following software installed on your system:
     ```bash
     rails db:create db:schema:load db:seed
     ```
-    ###### Note: Seeding Database is neccessary for creating default credentials for login
+
+    Note: Seeding Database is necessary for creating default credentials for login
 
     **Admin Credentials**
-    email: `admin@gmail.com`
-    password: `admin@password`
+    Email: `pladmin@mailinator.com`
+    Password: `password@admin`
 
-    email: `testadmin@gmail.com`
-    password: `password@admin`
+    **User Credentials**
+    Email: `pluser@mailinator.com`
+    Password: `password@user`
 
 4. Start the application:
       ```bash
-      rails server
+      rails server -p 3001
       ```
 
 5. Make sure the tests pass before pushing changes:
