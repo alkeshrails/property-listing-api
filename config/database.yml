@@ -23,8 +23,7 @@ default: &default
   # host: database
   host: localhost
   pool: 5
-  username: pguser
-  password: postgres
+  username: postgres
 
 
 development:
